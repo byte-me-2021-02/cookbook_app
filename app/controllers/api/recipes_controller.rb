@@ -36,12 +36,12 @@ class Api::RecipesController < ApplicationController
     # show action
     @recipe = Recipe.find_by(id: params[:id])
     # update
-    @recipe.chef = params[:chef]
-    @recipe.ingredients = params[:ingredients]
-    @recipe.directions = params[:directions]
-    @recipe.prep_time = params[:prep_time]
-    @recipe.title = params[:title]
-    @recipe.image_url = params[:image_url]
+    @recipe.chef = params[:chef] || @recipe.chef 
+    @recipe.ingredients = params[:ingredients] || @recipe.ingredients
+    @recipe.directions = params[:directions] || @recipe.directions
+    @recipe.prep_time = params[:prep_time] || @recipe.prep_time
+    @recipe.title = params[:title] || @recipe.title
+    @recipe.image_url = params[:image_url] || @recipe.image_url
     @recipe.save
     render 'show.json.jb'
 
