@@ -49,4 +49,10 @@ class Api::RecipesController < ApplicationController
     # get params from incomnia to update the data
     # add other attributes
   end
+
+  def destroy
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.destroy
+    render json: {message: "you deleted the recipe"}
+  end
 end
