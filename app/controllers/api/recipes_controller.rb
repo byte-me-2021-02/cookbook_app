@@ -34,14 +34,14 @@ class Api::RecipesController < ApplicationController
   def update
     # combination of the show and the create actions
     # show action
-    @recipe = Recipe.find_by(id: 2)
+    @recipe = Recipe.find_by(id: params[:id])
     # update
-    @recipe.chef = "Melanie"
-    @recipe.ingredients = "Melanie"
-    @recipe.directions = "Melanie"
-    @recipe.prep_time = "Melanie"
-    @recipe.title = "Melanie"
-    @recipe.image_url = "Melanie"
+    @recipe.chef = params[:chef]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.directions = params[:directions]
+    @recipe.prep_time = params[:prep_time]
+    @recipe.title = params[:title]
+    @recipe.image_url = params[:image_url]
     @recipe.save
     render 'show.json.jb'
 
