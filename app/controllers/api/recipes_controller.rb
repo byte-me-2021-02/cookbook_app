@@ -30,4 +30,23 @@ class Api::RecipesController < ApplicationController
     @recipe.save
     render 'show.json.jb'
   end
+
+  def update
+    # combination of the show and the create actions
+    # show action
+    @recipe = Recipe.find_by(id: 2)
+    # update
+    @recipe.chef = "Melanie"
+    @recipe.ingredients = "Melanie"
+    @recipe.directions = "Melanie"
+    @recipe.prep_time = "Melanie"
+    @recipe.title = "Melanie"
+    @recipe.image_url = "Melanie"
+    @recipe.save
+    render 'show.json.jb'
+
+    # get the id from params, make the recipe dynamic
+    # get params from incomnia to update the data
+    # add other attributes
+  end
 end
