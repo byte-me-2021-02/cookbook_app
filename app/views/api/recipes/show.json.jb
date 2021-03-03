@@ -1,16 +1,1 @@
-{
-  id: @recipe.id,
-  prep_time: @recipe.prep_time,
-  ingredients: @recipe.ingredients,
-  directions: @recipe.directions,
-  created_at: @recipe.created_at,
-  image_url: @recipe.image_url,
-  chef: @recipe.chef,
-  formatted: {
-    prep_time: @recipe.friendly_prep_time,
-    created_at: @recipe.friendly_created_at,
-    directions: @recipe.directions_list,
-    ingredients:  @recipe.ingredients_list,
-
-  }
-}
+render partial: "recipe.json.jb", locals: {recipe: @recipe}
