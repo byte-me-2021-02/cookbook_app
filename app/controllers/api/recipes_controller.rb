@@ -3,13 +3,21 @@ class Api::RecipesController < ApplicationController
     # @recipes = Recipe.where("prep_time > ?", 5)
     # @recipes = @recipes.order(:prep_time)
 
-    if params[:search]
-      @recipes = Recipe.where("ingredients LIKE ?", "%#{params[:search]}%")
-    else
-      @recipes = Recipe.all
-    end    
+    # if params[:search]
+    #   @recipes = Recipe.where("ingredients LIKE ?", "%#{params[:search]}%")
+    # else
+    #   @recipes = Recipe.all
+    # end    
 
-    @recipes = @recipes.order(:prep_time => :asc)
+    # @recipes = @recipes.order(:prep_time => :asc)
+    if current_user
+      @recipes = Recipe.all
+    else
+      @recipes = []
+    end
+    p "HERE IS THE CURRENT USER"
+    p current_user
+    p "THERE WAS THE CURRENT USER"
     render "index.json.jb"
   end
 
