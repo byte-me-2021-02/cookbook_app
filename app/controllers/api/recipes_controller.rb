@@ -21,6 +21,18 @@ class Api::RecipesController < ApplicationController
     render "index.json.jb"
   end
 
+
+  # recipes create
+  # when user adds a recipe, we know who added that recipe
+    # have authentication
+    # save user inputted info
+    # user_id fk on recipes table (MIGRATION)
+    # figure out who is logged in and add their id to the recipe that's getting made
+  
+  
+  
+  
+
   def show
     # accept the params
     # go to the db and get the correct recipe for that param
@@ -34,7 +46,9 @@ class Api::RecipesController < ApplicationController
 
   def create
     # make a new recipe in the db
-    p 
+    p "current_user"
+    p current_user.id
+    p "current_user"
     @recipe = Recipe.new(
       chef: params[:the_chef],
       ingredients: params[:the_ingredients],
@@ -42,8 +56,9 @@ class Api::RecipesController < ApplicationController
       prep_time: params[:the_prep_time],
       image_url: params[:the_image_url],
       title: params[:the_title],
+      user_id: current_user.id
     )
-    @recipe.save
+    @recipe.save!
     render 'show.json.jb'
   end
 
