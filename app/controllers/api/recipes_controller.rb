@@ -50,12 +50,12 @@ class Api::RecipesController < ApplicationController
     p current_user.id
     p "current_user"
     @recipe = Recipe.new(
-      chef: params[:the_chef],
-      ingredients: params[:the_ingredients],
-      directions: params[:the_directions],
-      prep_time: params[:the_prep_time],
-      image_url: params[:the_image_url],
-      title: params[:the_title],
+      chef: params[:chef],
+      ingredients: params[:ingredients],
+      directions: params[:directions],
+      prep_time: params[:prep_time],
+      image_url: params[:image_url],
+      title: params[:title],
       user_id: current_user.id
     )
     @recipe.save!
