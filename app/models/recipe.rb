@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  validates :ingredients, presence: true
+  validates :directions, presence: true  
   
   def ingredients_list
     # get the ingredients string
