@@ -89,4 +89,9 @@ class Api::RecipesController < ApplicationController
     @recipe.destroy
     render json: {message: "you deleted the recipe"}
   end
+
+  def random
+    @recipe = Recipe.find(Recipe.pluck(:id).sample)
+    render 'show.json.jb'
+  end
 end
