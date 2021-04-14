@@ -65,7 +65,7 @@ class Api::RecipesController < ApplicationController
     end
   end
 
-  def update
+  def update    
     # combination of the show and the create actions
     # show action
     @recipe = Recipe.find_by(id: params[:id])

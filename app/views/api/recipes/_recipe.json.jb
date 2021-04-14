@@ -3,6 +3,7 @@
   prep_time: recipe.prep_time,
   title: recipe.title,
   ingredients: recipe.ingredients,
+  user_id: recipe.user_id,
   directions: recipe.directions,
   created_at: recipe.created_at,
   updated_at: recipe.updated_at,
