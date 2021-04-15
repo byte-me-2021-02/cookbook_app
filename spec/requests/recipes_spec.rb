@@ -59,5 +59,21 @@ RSpec.describe "Recipes", type: :request do
       expect(response).to have_http_status(200)
       expect(recipe["title"]).to eq("the title")
     end
+
+    it 'should tell the user they are unauthorized if they are not logged in' do
+      post "/api/recipes", params: {
+        chef: "the chef",
+        ingredients: "the ingredients",
+        directions: "the directions",
+        prep_time: "the prep_time",
+        image_url: "the image_url",
+        title: "the title"       
+      }
+
+      recipe = JSON.parse(response.body)
+      # p recipe
+      # check that the correct data is in the response
+      expect(response).to have_http_status(401)     
+    end
   end
 end

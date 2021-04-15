@@ -1,5 +1,5 @@
 class Api::RecipesController < ApplicationController  
-  
+  before_action :authenticate_user, only: [:create]  
   def index
     # @recipes = Recipe.where("prep_time > ?", 5)
     # @recipes = @recipes.order(:prep_time)
