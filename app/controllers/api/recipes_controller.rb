@@ -10,14 +10,9 @@ class Api::RecipesController < ApplicationController
     # end    
 
     # @recipes = @recipes.order(:prep_time => :asc)
-    if current_user
-      @recipes = Recipe.all
-    else
-      @recipes = []
-    end
-    p "HERE IS THE CURRENT USER"
-    p current_user
-    p "THERE WAS THE CURRENT USER"
+    
+    @recipes = Recipe.all
+    
     render "index.json.jb"
   end
 
