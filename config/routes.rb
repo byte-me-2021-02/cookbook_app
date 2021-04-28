@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
 
-    root 'application#index'    
+    
     
   end
-  get "*string1", to: 'application#index'
+  
 end
