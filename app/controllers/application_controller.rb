@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def index
+    # vue app
+    render :file => 'public/index.html'
+  end
 
 end

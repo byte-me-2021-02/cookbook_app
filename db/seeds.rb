@@ -1,4 +1,3 @@
-
 User.create!([
   {name: "jane", email: "jane@jane.com", password: "password"},
   {name: "betsy", email: "betsy@betsy.com", password: "password"},
@@ -6,6 +5,8 @@ User.create!([
   {name: "danielle", email: "danielle@example.com", password: "password"},
   {name: "karen", email: "karen@example.com", password: "password"}
 ])
+
+
 
 
 Recipe.create!([
@@ -25,3 +26,4 @@ Recipe.create!([
   {chef: "rachel ray", ingredients: "greens etc", directions: "make the salad", prep_time: 10, image_url: "https://www.wholesomeyum.com/wp-content/uploads/2020/03/wholesomeyum-chef-salad-recipe-4.jpg", title: "chef's salad", user_id: 4},
   {chef: "rachel ray", ingredients: "greens etc", directions: "make the salad", prep_time: 1111, image_url: nil, title: "chef's salad!!!!", user_id: 4}
 ])
+
